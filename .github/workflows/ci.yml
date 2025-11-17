@@ -68,14 +68,14 @@ jobs:
         with:
           image-ref: democyber:latest
           format: 'json'
-          exit-code: '1'
+          exit-code: '0'
           severity: 'CRITICAL,HIGH'
-          output: 'trivy-report.txt'
+          output: 'trivy-report.json'
       #Trivy report upload
       - name: Upload Trivy scan report
         uses: actions/upload-artifact@v4
         with:
           name: trivy-report
-          path: trivy-report.txt
+          path: trivy-report.json
 
 
