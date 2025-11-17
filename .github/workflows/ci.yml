@@ -25,9 +25,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      # Gitleaks scan (before compila�on)
-      - name: Run Gitleaks scan
-        uses: zricethezav/gitleaks-action@v2
 
         # Compile Java code
       - name: Compile Java
@@ -36,5 +33,9 @@ jobs:
       # Build Maven
       - name: Build Java project with Maven
         run: mvn clean package
+
+      # Gitleaks scan (before compilation)
+      - name: Run Gitleaks scan
+        uses: zricethezav/gitleaks-action@v2
 
 
